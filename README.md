@@ -31,8 +31,8 @@ Running as a container with volume mapped to the current working directory. Pack
 
     docker run -p 8000:8080 -v $(pwd):/app -w "/app" openjdk:11.0.6-jre-slim java -jar target/springboot-demo-0.0.1-SNAPSHOT.jar
 
+
     
-    
-## Installation
+## Configuration
 
 Set the postgres database url as a DB_URL env variable
