@@ -3,19 +3,11 @@
 Sample Spring Boot App.
 
 
-## Docker Postgres Setup using Docker
+## Running using docker manually
 
 Create Docker container with Postgres database:
 
     docker create --name postgres-demo -e POSTGRES_PASSWORD=Welcome -p 5432:5432 postgres:11.5-alpine
-
-Start container:
-
-    docker start postgres-demo
-
-Stop container:
-
-    docker stop postgres-demo
 
 Connection Info:
 
@@ -24,6 +16,12 @@ Connection Info:
     Username: `postgres`
 
     Password: `Welcome`
+    
+Running as a container with volume mapped to the current working directory. Package the app with `mvn package` before running.
+
+    docker start postgres-demo
+    docker run -p 8000:8080 -v $(pwd):/app -w "/app" openjdk:11.0.6-jre-slim java -jar target/springboot-demo-0.0.1-SNAPSHOT.jar
+
     
     
 ## Installation
