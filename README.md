@@ -21,10 +21,14 @@ Start Postgres
 
     docker start postgres-demo
 
- Build and run docker image
+ Build and locally (containers volume mapped to source folder)
     
     mvn package
     docker build -t sprintboot-demo .
+    docker run -p 8000:8080 -v $(pwd):/app springboot-demo
+
+Production build
+    docker build -f prod.dockerfile -t springboot-demo .
     docker run -p 8000:8080 springboot-demo
     
 Running as a container with volume mapped to the current working directory. Package the app with `mvn package` before running.
