@@ -16,10 +16,19 @@ Connection Info:
     Username: `postgres`
 
     Password: `Welcome`
+
+Start Postgres
+
+    docker start postgres-demo
+
+ Build and run docker image
+    
+    mvn package
+    docker build -t sprintboot-demo .
+    docker run -p 8000:8080 springboot-demo
     
 Running as a container with volume mapped to the current working directory. Package the app with `mvn package` before running.
 
-    docker start postgres-demo
     docker run -p 8000:8080 -v $(pwd):/app -w "/app" openjdk:11.0.6-jre-slim java -jar target/springboot-demo-0.0.1-SNAPSHOT.jar
 
     
