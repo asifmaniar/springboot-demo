@@ -1,27 +1,14 @@
 # Spring Boot Sample
 
-Sample Spring Boot App.
+Sample Starter Spring Boot App.
 
 
-## Running using docker compose
+## Running using docker
 
- Build and locally with auto-restarts (containers volume mapped to source folder)
-    
+ APP_ENV=development maps the container volume to the source code folder and auto-restarts app on code changes
+ APP_ENV=production builds in a build container, copies the jar and runs in a light weight jre container
+
+    export APP_ENV=development or export APP_ENV=production
     docker-compose build
     docker-compose up -d
     docker-compose stop
-
-
-Production build
-    docker build -f prod.dockerfile -t springboot-demo .
-    docker run -p 8000:8080 springboot-demo
-    
-Running as a container with volume mapped to the current working directory. Package the app with `mvn package` before running.
-
-    docker run -p 8000:8080 -v $(pwd):/app -w "/app" openjdk:11.0.6-jre-slim java -jar target/springboot-demo-0.0.1-SNAPSHOT.jar
-
-
-    
-## Configuration
-
-Set the postgres database url as a DB_URL env variable

@@ -8,7 +8,7 @@ RUN mvn package
 #use slim jre container to copy and execute the jar
 FROM openjdk:11.0.6-jre-slim
 LABEL author="Asif Maniar"
-WORKDIR /app
+WORKDIR /publish
 COPY --from=build /build/target/springboot-demo-0.0.1-SNAPSHOT.jar springboot-demo.jar
 ARG JAVA_OPTS
 ENV JAVA_OPTS=$JAVA_OPTS 

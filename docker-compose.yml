@@ -5,11 +5,11 @@ services:
     image: springboot-demo
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: docker/${APP_ENV}.dockerfile
     ports:
       - 8080:8080
     environment:
-      APP_ENV: dev
+      APP_ENV: ${APP_ENV}
     volumes: 
       - ".:/app"
     depends_on:
