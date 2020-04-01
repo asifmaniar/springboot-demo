@@ -1,4 +1,4 @@
-# Spring Boot Sample
+# Spring Boot Starter
 
 Sample Starter Spring Boot App.
 
