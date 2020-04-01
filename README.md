@@ -3,28 +3,14 @@
 Sample Spring Boot App.
 
 
-## Running using docker manually
-
-Create Docker container with Postgres database:
-
-    docker create --name postgres-demo -e POSTGRES_PASSWORD=Welcome -p 5432:5432 postgres:11.5-alpine
-
-Connection Info:
-
-    JDBC URL: `jdbc:postgresql://localhost:5432/postgres`
-
-    Username: `postgres`
-
-    Password: `Welcome`
-
-Start Postgres
-
-    docker start postgres-demo
+## Running using docker compose
 
  Build and locally with auto-restarts (containers volume mapped to source folder)
     
-    docker build -t springboot-demo .
-    docker run -p 8000:8080 -v $(pwd):/app springboot-demo
+    docker-compose build
+    docker-compose up -d
+    docker-compose stop
+
 
 Production build
     docker build -f prod.dockerfile -t springboot-demo .
