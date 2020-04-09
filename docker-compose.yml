@@ -1,8 +1,8 @@
 version: '3.4'
 
 services:
-  springboot-demo:
-    image: springboot-demo
+  springboot-starter:
+    image: silverwebs/springboot-starter
     build:
       context: .
       dockerfile: docker/${APP_ENV}.dockerfile

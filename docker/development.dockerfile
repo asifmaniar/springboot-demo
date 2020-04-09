@@ -15,5 +15,5 @@ ENTRYPOINT exec mvn spring-boot:run
 # docker build -t [your_image_name] .
 
 # Run the image using:
-# docker run -p 8000:8080 -v $(pwd):/app springboot-demo
+# docker run -p 8000:8080 -v $(pwd):/app springboot-starter
 # http://localhost:8000
